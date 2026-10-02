@@ -1,0 +1,10 @@
+# Compiled executables
+check_superblock
+init_superblock
+init_inodes
+
+# Object files
+*.o
+
+# Temporary files
+*.tmp

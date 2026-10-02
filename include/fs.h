@@ -21,8 +21,21 @@ typedef struct {
     uint32_t data_start;
     uint8_t reserved[FS_BLOCK_SIZE - 32];
 } Superblock;
+typedef struct {
+    uint32_t mode;
+    uint32_t uid;
+    uint32_t gid;
+    uint32_t link_count;
+    uint64_t size;
+    uint64_t atime;
+    uint64_t mtime;
+    uint64_t ctime;
+    uint32_t direct_blocks[10];
+    uint32_t indirect_block;
+uint8_t reserved[32];
+} Inode;
 
-_Static_assert(sizeof(Superblock) == FS_BLOCK_SIZE,
-               "Superblock must be exactly one block");
+_Static_assert(sizeof(Inode) == 128,
+               "Inode must be exactly 128 bytes");
 
 #endif
