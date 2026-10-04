@@ -9,6 +9,7 @@
 #define FS_BLOCK_SIZE   4096
 #define FS_TOTAL_BLOCKS 4096
 #define FS_INODE_COUNT  128
+#define FS_DATA_START   6
 
 typedef struct {
     uint32_t magic;
